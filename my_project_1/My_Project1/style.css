@@ -47,8 +47,8 @@ pre {
     gap: 15px;
 }
 
-.close {
-    /*display:none;*/
+.closed {
+   /*display:none !important;*/
 }
 
 .company-name {
@@ -58,7 +58,7 @@ pre {
     margin-right: 7px;
 }
 
-.container {
+.job-cards-container {
     width:80%;
     display: flex;
     flex-direction: column;
@@ -69,7 +69,7 @@ pre {
     padding: 30px;
 }
 
-.filter {
+.filter-card {
     border: 1px solid whitesmoke;
     box-sizing: border-box;
     border-radius: var(--radius);
@@ -126,7 +126,7 @@ pre {
 
 .Job-details div {
     display: flex;
-    gap: 10px;
+    gap:10px;
 }
 
 .job-name {
@@ -140,17 +140,17 @@ pre {
     cursor: pointer;
 }
 
-.remove-filters {
+.close-filter-card {
     color:var(--darkgrey);
 }
 
-.remove-filters:hover {
+.close-filter-card:hover {
     color: var(--blue);
     text-decoration: underline var(--blue);
     cursor: pointer;
 }
 
-.Selected-filters div {
+.filter-btn div {
     font-weight: var(--bold-md);
     color:var(--blue);
     background-color: var(--lightblue);
@@ -159,22 +159,22 @@ pre {
     overflow: hidden;
 }
 
-.Selected-filters div span:nth-child(1) {
+.filter-btn div span:nth-child(1) {
     padding: 0px 3px;
 }
 
-.Selected-filters div span:nth-child(2) {
+.filter-btn div span:nth-child(2) {
     color: white;
     background-color: var(--blue);
     padding: 5px 7px;
 }
 
-.Selected-filters div span:nth-child(2):hover {
+.filter-btn div:hover span:nth-child(2) {
     background-color:black;
     cursor: pointer;
 }
 
-.Selected-filters{
+.filter-btn{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -237,7 +237,7 @@ body {
         width: 60px;
     }
 
-    .container {
+    .job-cards-container {
         gap:50px;
     }
 
@@ -247,5 +247,39 @@ body {
 
     .img-container img {
         height:100px;
+    }
+}
+
+@media screen and (min-width:501px) and (max-width:700px) {
+    .card {
+        flex-direction: column;
+        align-items: start;
+        gap:15px;
+    }
+
+    .card-content {
+        border-bottom: 1px solid var(--silver);
+        padding-bottom: 20px;
+        width:100%;
+    }
+
+    .card-content img {
+        width: 80px;
+    }
+
+    .job-cards-container {
+        gap:40px;
+    }
+   
+    .filters {
+        justify-content:start;
+    }
+
+    .filter-card {
+        transform: translateY(-165px);
+    }
+
+    .img-container img {
+        height:150px;
     }
 }
